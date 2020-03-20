@@ -26,6 +26,9 @@
 		0038680D242431FF006F59E6 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038680C242431FF006F59E6 /* NetworkingError.swift */; };
 		0038680F242434ED006F59E6 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038680E242434ED006F59E6 /* RequestBuilder.swift */; };
 		0038681224243979006F59E6 /* VenueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038681124243979006F59E6 /* VenueStorage.swift */; };
+		0038681524251BE0006F59E6 /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038681424251BE0006F59E6 /* VenueCell.swift */; };
+		0038681824252113006F59E6 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038681724252113006F59E6 /* LocationService.swift */; };
+		0038681A24252122006F59E6 /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038681924252122006F59E6 /* LocationDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		0038680C242431FF006F59E6 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		0038680E242434ED006F59E6 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		0038681124243979006F59E6 /* VenueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueStorage.swift; sourceTree = "<group>"; };
+		0038681424251BE0006F59E6 /* VenueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueCell.swift; sourceTree = "<group>"; };
+		0038681724252113006F59E6 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		0038681924252122006F59E6 /* LocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +124,7 @@
 		003867F0242004D4006F59E6 /* Venues */ = {
 			isa = PBXGroup;
 			children = (
-				003867F224200570006F59E6 /* Venues.storyboard */,
+				0038681324251BCA006F59E6 /* Views */,
 				003867F424200580006F59E6 /* VenuesViewController.swift */,
 			);
 			path = Venues;
@@ -173,6 +179,7 @@
 		0038680424242B3E006F59E6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				00386816242520FF006F59E6 /* LocationService */,
 				003867FA24242859006F59E6 /* NetworkingService */,
 			);
 			path = Services;
@@ -192,6 +199,24 @@
 				0038681124243979006F59E6 /* VenueStorage.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		0038681324251BCA006F59E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				003867F224200570006F59E6 /* Venues.storyboard */,
+				0038681424251BE0006F59E6 /* VenueCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		00386816242520FF006F59E6 /* LocationService */ = {
+			isa = PBXGroup;
+			children = (
+				0038681724252113006F59E6 /* LocationService.swift */,
+				0038681924252122006F59E6 /* LocationDTO.swift */,
+			);
+			path = LocationService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +301,11 @@
 				0038680B24242FC3006F59E6 /* GlobalConstants.swift in Sources */,
 				003867DA241FFCEE006F59E6 /* SceneDelegate.swift in Sources */,
 				0038680224242AD9006F59E6 /* VenueRepository.swift in Sources */,
+				0038681524251BE0006F59E6 /* VenueCell.swift in Sources */,
+				0038681824252113006F59E6 /* LocationService.swift in Sources */,
 				003867FC24242885006F59E6 /* NetworkingService.swift in Sources */,
 				003867FE24242A91006F59E6 /* VenueManager.swift in Sources */,
+				0038681A24252122006F59E6 /* LocationDTO.swift in Sources */,
 				0038680D242431FF006F59E6 /* NetworkingError.swift in Sources */,
 				003867F72420059B006F59E6 /* ContactUsViewController.swift in Sources */,
 				0038681224243979006F59E6 /* VenueStorage.swift in Sources */,

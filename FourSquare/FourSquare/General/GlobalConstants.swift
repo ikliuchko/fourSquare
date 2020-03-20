@@ -9,7 +9,15 @@
 import Foundation
 
 struct GlobalConstants {
-    static let userName: String = ""
-    static let secret: String = ""
-    static let basePath: String = ""
+    /// Base path for foursquare api
+    static let basePath: String = "https://api.foursquare.com/v2/"
+    
+    /// userId provided with registered app
+    static let userId: String = ""
+    
+    /// userSecret  provided with registered app
+    static let userSecret: String = ""
+    
+    /// represented by date YYYYMMDD
+    static let supportedApiVersion: String = "20200320"
 }

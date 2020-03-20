@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import CoreLocation
 
 protocol VenueRepository {
-    func getTrendingVenues(by location: CLLocation, completion: @escaping ([Venue]?, Error?) -> Void)
+    func getTrendingVenues(by location: LocationDTO, completion: @escaping ([Venue]?, Error?) -> Void)
 }
 
 final class VenueRepositoryImpl: VenueRepository {
@@ -18,7 +17,7 @@ final class VenueRepositoryImpl: VenueRepository {
     private let networkinService: NetworkingService = NetworkingServiceImpl()
     private let requestBuilder: RequestBuilder = RequestBuilderImpl()
     
-    func getTrendingVenues(by location: CLLocation, completion: @escaping ([Venue]?, Error?) -> Void) {
+    func getTrendingVenues(by location: LocationDTO, completion: @escaping ([Venue]?, Error?) -> Void) {
         do {
             let requestURL = try requestBuilder.getUrl(for: .trendingVenues(location))
             networkinService.getData(for: requestURL) { data, error in
