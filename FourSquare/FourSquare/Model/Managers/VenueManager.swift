@@ -17,11 +17,18 @@ final class VenueManagerImpl: VenueManager {
     private let venueStorage: VenueStorage = VenueStorageImpl()
     
     func getTrendingVenues(for location: LocationDTO, completion: @escaping([Venue]?, Error?) -> Void) {
-        venueRepository.getTrendingVenues(by: location) { venues, error in
+        venueRepository.getTrendingVenues(by: location) { [unowned self] venues, error in
             if let venues = venues {
+                self.venueStorage.store(venues: venues)
                 completion(venues, nil)
             } else {
-               completion(nil, error)
+                self.venueStorage.getVenues { stVenues, stError in
+                    if let venues = stVenues {
+                        completion(venues, nil)
+                    } else {
+                        completion(nil, error)
+                    }
+                }
             }
             
         }

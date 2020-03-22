@@ -17,6 +17,6 @@ final class NetworkingServiceImpl: NetworkingService {
     func getData(for url: URL, completion: @escaping (Data?, Error?) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             completion(data, error)
-        }
+        }.resume()
     }
 }

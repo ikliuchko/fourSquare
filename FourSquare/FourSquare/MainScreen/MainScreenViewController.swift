@@ -8,16 +8,17 @@
 
 import UIKit
 
-class MainScreenViewController: UIViewController {
+final class MainScreenViewController: UIViewController {
     
     // MARK: - Constants
-
+    
     private struct Constants {
     }
-
+    
     // MARK: - Properties
     
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
+    
     private var pageViewController: MainScreenPageViewController?
     
     // MARK: - Overrides
@@ -28,25 +29,37 @@ class MainScreenViewController: UIViewController {
             pageViewController.pageScrollDelegate = self
         }
     }
-
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        checkIdsSetup()
+    }
+    
     // MARK: - Public
-
+    
     // MARK: - Private
+    
+    private func checkIdsSetup() {
+        guard GlobalConstants.userId.isEmpty ||
+            GlobalConstants.userSecret.isEmpty else { return }
+        
+        let alertVC = UIAlertController(title: "Oopsie", message: "Please set userId and userSecret in Global Constants", preferredStyle: .alert)
+        self.present(alertVC, animated: true, completion: nil)
+    }
     
     
     // MARK: - Actions
-
+    
     @IBAction private func segmentedControlPressed(_ sender: UISegmentedControl) {
         pageViewController?.switchPage(to: sender.selectedSegmentIndex)
     }
-
+    
 }
 
 extension MainScreenViewController: MainScreenPageViewControllerDelegate {

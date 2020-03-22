@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0019B26A2427CB9D003A0DA1 /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0019B2692427CB9D003A0DA1 /* LocationError.swift */; };
+		0019B26C24281ED4003A0DA1 /* VenueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0019B26B24281ED4003A0DA1 /* VenueResponse.swift */; };
 		003867D8241FFCEE006F59E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003867D7241FFCEE006F59E6 /* AppDelegate.swift */; };
 		003867DA241FFCEE006F59E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003867D9241FFCEE006F59E6 /* SceneDelegate.swift */; };
 		003867DC241FFCEE006F59E6 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003867DB241FFCEE006F59E6 /* MainScreenViewController.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0019B2692427CB9D003A0DA1 /* LocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
+		0019B26B24281ED4003A0DA1 /* VenueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueResponse.swift; sourceTree = "<group>"; };
 		003867D4241FFCEE006F59E6 /* FourSquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourSquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003867D7241FFCEE006F59E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		003867D9241FFCEE006F59E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				0038680524242B9C006F59E6 /* Venue.swift */,
+				0019B26B24281ED4003A0DA1 /* VenueResponse.swift */,
 			);
 			path = BO;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				0038681724252113006F59E6 /* LocationService.swift */,
+				0019B2692427CB9D003A0DA1 /* LocationError.swift */,
 				0038681924252122006F59E6 /* LocationDTO.swift */,
 			);
 			path = LocationService;
@@ -302,10 +308,12 @@
 				0038680F242434ED006F59E6 /* RequestBuilder.swift in Sources */,
 				003867D8241FFCEE006F59E6 /* AppDelegate.swift in Sources */,
 				003867F524200580006F59E6 /* VenuesViewController.swift in Sources */,
+				0019B26A2427CB9D003A0DA1 /* LocationError.swift in Sources */,
 				0038680B24242FC3006F59E6 /* GlobalConstants.swift in Sources */,
 				003867DA241FFCEE006F59E6 /* SceneDelegate.swift in Sources */,
 				0038680224242AD9006F59E6 /* VenueRepository.swift in Sources */,
 				0038681524251BE0006F59E6 /* VenueCell.swift in Sources */,
+				0019B26C24281ED4003A0DA1 /* VenueResponse.swift in Sources */,
 				0038681824252113006F59E6 /* LocationService.swift in Sources */,
 				003867FC24242885006F59E6 /* NetworkingService.swift in Sources */,
 				003867FE24242A91006F59E6 /* VenueManager.swift in Sources */,

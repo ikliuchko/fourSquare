@@ -24,8 +24,12 @@ final class VenueRepositoryImpl: VenueRepository {
                 if let data = data {
                     let decoder = JSONDecoder()
                     do {
-                        let venues = try decoder.decode([Venue].self, from: data)
-                        completion(venues, nil)
+                        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                            if let venuesData = json["response"] as? Data {
+                                let venues = try decoder.decode([Venue].self, from: venuesData)
+                                completion(venues, nil)
+                            }
+                        }
                     } catch {
                         completion(nil, error)
                     }

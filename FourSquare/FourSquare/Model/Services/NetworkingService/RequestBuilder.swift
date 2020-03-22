@@ -37,13 +37,15 @@ struct RequestBuilderImpl: RequestBuilder {
     
     private let baseString = GlobalConstants.basePath
     private let authenticationString = "?client_id=\(GlobalConstants.userId)&client_secret=\(GlobalConstants.userSecret)"
+    private var venuesPath = "venues/trending"
     private let supportedVersionString = "&v=\(GlobalConstants.supportedApiVersion)"
+    private let limitCount = "&limit=5"
     
     func getUrl(for type: RequestType) throws -> URL {
         let urlString: String
         switch type {
         case .trendingVenues(let location):
-            urlString = baseString + authenticationString + "&ll=" + location.latitude + "," + location.longitude
+            urlString = baseString + venuesPath + authenticationString + "&ll=" + location.latitude + "," + location.longitude + supportedVersionString + limitCount
         }
         guard let url = URL(string: urlString) else {
             throw NetworkingError.incorrectURL

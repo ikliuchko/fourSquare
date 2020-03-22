@@ -2,7 +2,7 @@
 //  MainScreenPageViewController.swift
 //  FourSquare
 //
-//  Created by Improveit Solutions on 22.03.2020.
+//  Created by JBS Solutions on 22.03.2020.
 //  Copyright © 2020 JBSolutions. All rights reserved.
 //
 
@@ -16,6 +16,9 @@ class MainScreenPageViewController: UIPageViewController {
     
     // MARK: - Constants
     
+    // MARK: - Properties
+    
+    weak var pageScrollDelegate: MainScreenPageViewControllerDelegate?
     
     private lazy var venuesVC: VenuesViewController = {
         return UIStoryboard(name: VenuesViewController.storyboardName, bundle: nil).instantiateInitialViewController() as! VenuesViewController
@@ -29,10 +32,6 @@ class MainScreenPageViewController: UIPageViewController {
         return [venuesVC,
                 contactUsVC]
     }()
-    
-    // MARK: - Properties
-    
-    weak var pageScrollDelegate: MainScreenPageViewControllerDelegate?
     
     // MARK: - Lifecycle
     
