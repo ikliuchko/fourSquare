@@ -9,7 +9,10 @@
 import UIKit
 
 final class ContactUsViewController: UIViewController {
+    
     // MARK: - Constants
+    
+    static let storyboardName = "ContactUs"
 
     private struct Constants {
         static let contactUsText: String = "Foursquare for Enterprise \n Your partner in finding creative ways to power location-based experiences, \n transforming your business from the ground up."

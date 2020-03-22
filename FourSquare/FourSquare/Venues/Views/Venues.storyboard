@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Venue View Controller-->
+        <!--Venues View Controller-->
         <scene sceneID="ViZ-wO-Sd5">
             <objects>
-                <viewController id="AdJ-he-hiB" customClass="VenueViewController" customModule="FourSquare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AdJ-he-hiB" customClass="VenuesViewController" customModule="FourSquare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kki-mK-sQQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

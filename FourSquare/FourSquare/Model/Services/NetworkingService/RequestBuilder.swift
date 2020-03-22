@@ -6,6 +6,8 @@
 //  Copyright © 2020 JBSolutions. All rights reserved.
 //
 
+import Foundation
+
 enum RequestType {
     case trendingVenues(LocationDTO)
 }

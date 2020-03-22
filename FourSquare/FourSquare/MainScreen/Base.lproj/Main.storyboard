@@ -7,42 +7,54 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FourSquare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainScreenViewController" customModule="FourSquare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mgr-07-Glm">
-                                <rect key="frame" x="142" y="812" width="131" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ubb-jd-Ce0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="741"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ubb-jd-Ce0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="740"/>
                                 <connections>
                                     <segue destination="hRv-Cd-dlJ" kind="embed" id="0Ky-GY-DBY"/>
                                 </connections>
                             </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mgr-07-Glm">
+                                <rect key="frame" x="134.5" y="811" width="145" height="32"/>
+                                <segments>
+                                    <segment title="Venues"/>
+                                    <segment title="AboutUs"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="s7j-FM-lGb"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Mgr-07-Glm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FTU-6d-WNU"/>
+                            <constraint firstItem="Mgr-07-Glm" firstAttribute="top" secondItem="Ubb-jd-Ce0" secondAttribute="bottom" constant="27" id="GLh-Po-5bx"/>
+                            <constraint firstItem="Ubb-jd-Ce0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HgW-BD-JYF"/>
+                            <constraint firstItem="Ubb-jd-Ce0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RyY-2M-kwM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mgr-07-Glm" secondAttribute="bottom" constant="20" id="g3k-oM-3Dg"/>
+                            <constraint firstItem="Ubb-jd-Ce0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nlG-1S-0zg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Mgr-07-Glm" id="gOf-1X-jOO"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Main Screen Page View Controller-->
         <scene sceneID="IK9-bO-MP9">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="hRv-Cd-dlJ" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="hRv-Cd-dlJ" customClass="MainScreenPageViewController" customModule="FourSquare" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5c-eN-tkF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1013" y="121"/>

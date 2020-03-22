@@ -8,9 +8,11 @@
 
 import UIKit
 
-final class VenueViewController: UIViewController {
+final class VenuesViewController: UIViewController {
     
     // MARK: - Constants
+    
+    static let storyboardName = "Venues"
     
     private struct Constants {
         static let cellReuseIdentifier = "venueCell"
@@ -54,7 +56,7 @@ final class VenueViewController: UIViewController {
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension VenueViewController: UITableViewDelegate, UITableViewDataSource {
+extension VenuesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return venues.count
     }

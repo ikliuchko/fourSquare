@@ -15,17 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghl-Rp-mne">
-                                <rect key="frame" x="186" y="184" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghl-Rp-mne">
+                                <rect key="frame" x="24" y="184" width="366" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Ghl-Rp-mne" firstAttribute="leading" secondItem="tKn-fJ-KRL" secondAttribute="leading" constant="24" id="23E-7A-2v6"/>
                             <constraint firstItem="Ghl-Rp-mne" firstAttribute="top" secondItem="tKn-fJ-KRL" secondAttribute="top" constant="140" id="PMt-SB-qip"/>
                             <constraint firstItem="Ghl-Rp-mne" firstAttribute="centerX" secondItem="uOB-bO-dXn" secondAttribute="centerX" id="tIl-Yz-whJ"/>
+                            <constraint firstItem="tKn-fJ-KRL" firstAttribute="trailing" secondItem="Ghl-Rp-mne" secondAttribute="trailing" constant="24" id="yfw-ej-sBe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tKn-fJ-KRL"/>
                     </view>
