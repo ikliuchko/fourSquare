@@ -55,42 +55,35 @@ final class VenuesViewController: UIViewController {
         defer {
             activityIndicator.stopAnimating()
         }
+        
         activityIndicator.startAnimating()
+        
         locationService.getCurrentLocation { [weak self] location, error in
             if let error = error {
-                self?.handle(error: error)
-            }
-            
-            if let location = location {
-                self?.venueManager.getTrendingVenues(for: location) { venues, error in
-                    if let error = error {
-                        DispatchQueue.main.async {
-                        self?.handle(error: error)
-                        }
-                    }
-                    
-                    if let venues = venues {
-                        DispatchQueue.main.async {
-                            self?.venues = venues
-                        }
-                    }
-                    
+                DispatchQueue.main.async {
+                    self?.handle(error: error)
                 }
             }
             
+            guard let location = location else {
+                print("no location, this should not happen ;)")
+                return
+            }
+            
+            self?.venueManager.getTrendingVenues(for: location) { venues, error in
+                if let error = error {
+                    DispatchQueue.main.async {
+                        self?.handle(error: error)
+                    }
+                }
+                
+                if let venues = venues {
+                    DispatchQueue.main.async {
+                        self?.venues = venues
+                    }
+                }
+            }
         }
-    }
-    
-    private func displayEmptyVenuesAlert() {
-        let alertVC = UIAlertController(title: "Oopsie",
-                                    message: "You have disabled location services... so sad. Please turn them on in settings an restart the app",
-                                    preferredStyle: .alert
-        )
-        let action = UIAlertAction(title: "Close", style: .cancel) { _ in
-            self.dismiss(animated: true)
-        }
-        alertVC.addAction(action)
-        present(alertVC, animated: true)
     }
 }
 
@@ -141,8 +134,29 @@ extension VenuesViewController {
                 self.getVenuesData()
             }
             alertVC.addAction(retryAction)
+        case let netError as NSError where netError.code == -1009:
+            alertVC = UIAlertController(title: "Oopsie",
+                                        message: "It seems you're offline. Please connect and try again.",
+                                        preferredStyle: .alert
+            )
+            let retryAction = UIAlertAction(title: "Retry", style: .cancel) { [unowned self] _ in
+                self.getVenuesData()
+            }
+            alertVC.addAction(retryAction)
         default:
             return
         }
+    }
+    
+    private func displayEmptyVenuesAlert() {
+        let alertVC = UIAlertController(title: "Oopsie",
+                                    message: "We could not found any venue in the current area, please try later.",
+                                    preferredStyle: .alert
+        )
+        let action = UIAlertAction(title: "Close", style: .cancel) { _ in
+            self.dismiss(animated: true)
+        }
+        alertVC.addAction(action)
+        present(alertVC, animated: true)
     }
 }

@@ -16,13 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ubb-jd-Ce0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="740"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="712"/>
                                 <connections>
                                     <segue destination="hRv-Cd-dlJ" kind="embed" id="0Ky-GY-DBY"/>
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mgr-07-Glm">
-                                <rect key="frame" x="134.5" y="811" width="145" height="32"/>
+                                <rect key="frame" x="134.5" y="783" width="145" height="32"/>
                                 <segments>
                                     <segment title="Venues"/>
                                     <segment title="AboutUs"/>
@@ -38,7 +38,7 @@
                             <constraint firstItem="Mgr-07-Glm" firstAttribute="top" secondItem="Ubb-jd-Ce0" secondAttribute="bottom" constant="27" id="GLh-Po-5bx"/>
                             <constraint firstItem="Ubb-jd-Ce0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HgW-BD-JYF"/>
                             <constraint firstItem="Ubb-jd-Ce0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RyY-2M-kwM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mgr-07-Glm" secondAttribute="bottom" constant="20" id="g3k-oM-3Dg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mgr-07-Glm" secondAttribute="bottom" constant="48" id="g3k-oM-3Dg"/>
                             <constraint firstItem="Ubb-jd-Ce0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nlG-1S-0zg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

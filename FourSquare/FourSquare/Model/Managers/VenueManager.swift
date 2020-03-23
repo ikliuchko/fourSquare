@@ -23,7 +23,7 @@ final class VenueManagerImpl: VenueManager {
                 completion(venues, nil)
             } else {
                 self.venueStorage.getVenues { stVenues, stError in
-                    if let venues = stVenues {
+                    if let venues = stVenues, venues.count > 0 {
                         completion(venues, nil)
                     } else {
                         completion(nil, error)

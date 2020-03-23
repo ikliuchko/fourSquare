@@ -14,8 +14,12 @@ protocol VenueRepository {
 
 final class VenueRepositoryImpl: VenueRepository {
     
+    // MARK: - Properties
+    
     private let networkinService: NetworkingService = NetworkingServiceImpl()
     private let requestBuilder: RequestBuilder = RequestBuilderImpl()
+    
+    // MARK: - Venue Repository
     
     func getTrendingVenues(by location: LocationDTO, completion: @escaping ([Venue]?, Error?) -> Void) {
         do {
@@ -24,12 +28,9 @@ final class VenueRepositoryImpl: VenueRepository {
                 if let data = data {
                     let decoder = JSONDecoder()
                     do {
-                        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                            if let venuesData = json["response"] as? Data {
-                                let venues = try decoder.decode([Venue].self, from: venuesData)
-                                completion(venues, nil)
-                            }
-                        }
+                        let venueRootResponse: VenueRoot = try decoder.decode(VenueRoot.self, from: data)
+//                        completion(self.dummyVenues, nil)
+                        completion(venueRootResponse.response.venues, nil)
                     } catch {
                         completion(nil, error)
                     }
@@ -42,4 +43,13 @@ final class VenueRepositoryImpl: VenueRepository {
             completion(nil, error)
         }
     }
+    
+    // dummy data
+    
+    let dummyVenues = [
+    Venue(id: "3232", name: "Aaaaa"),
+    Venue(id: "4242", name: "Bbbbb"),
+    Venue(id: "5353", name: "Ccccc"),
+    Venue(id: "6161", name: "Ddddd"),
+    Venue(id: "7777", name: "Eeeee")]
 }

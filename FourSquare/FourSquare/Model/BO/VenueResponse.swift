@@ -8,9 +8,4 @@
 
 import Foundation
 
-struct VenueResponse: Codable {
-    let response: String
-    let venues: [Venue]
-    
-    
-}
+

@@ -12,3 +12,12 @@ struct Venue: Codable {
     let id: String
     let name: String
 }
+
+// technical models for parsing
+struct VenueRoot: Codable {
+    let response: VenueResponse
+}
+
+struct VenueResponse: Codable {
+    let venues: [Venue]
+}

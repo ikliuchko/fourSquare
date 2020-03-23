@@ -16,10 +16,16 @@ protocol VenueStorage {
 
 final class VenueStorageImpl: VenueStorage {
     
+    // MARK: - Properties
+    
+    private let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
     private lazy var managedContext: NSManagedObjectContext? = {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
+        guard let appDelegate = appDelegate else { return nil }
         return appDelegate.persistentContainer.viewContext
     }()
+    
+    // MARK: - Venue storage
     
     func getVenues(completion: @escaping ([Venue]?, Error?) -> Void) {
         guard let managedContext = managedContext else {
@@ -59,6 +65,9 @@ final class VenueStorageImpl: VenueStorage {
                     managedContext.delete(managedObjectData)
                 }
             }
+            
+            try managedContext.save()
+            print("Succesfully removed old entities")
         } catch let error as NSError {
             print("Deleted all my data in myEntity error : \(error) \(error.userInfo)")
         }
@@ -80,8 +89,4 @@ final class VenueStorageImpl: VenueStorage {
             print("succesfully stored")
         }
     }
-    
-    
-    
-    
 }
