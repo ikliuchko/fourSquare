@@ -49,7 +49,9 @@ final class MainScreenViewController: UIViewController {
         guard GlobalConstants.userId.isEmpty ||
             GlobalConstants.userSecret.isEmpty else { return }
         
-        let alertVC = UIAlertController(title: "Oopsie", message: "Please set userId and userSecret in Global Constants", preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Oopsie",
+                                        message: "Please set userId and userSecret in Global Constants",
+                                        preferredStyle: .alert)
         self.present(alertVC, animated: true, completion: nil)
     }
     

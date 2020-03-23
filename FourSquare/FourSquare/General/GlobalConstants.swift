@@ -10,7 +10,7 @@ import Foundation
 
 struct GlobalConstants {
     /// Base path for foursquare api
-    static let basePath: String = "https://api.foursquare.com/v2/"
+    static let basePath: String = "api.foursquare.com"
     
     /// userId provided with registered app
     static let userId: String = ""
@@ -20,4 +20,7 @@ struct GlobalConstants {
     
     /// represented by date YYYYMMDD
     static let supportedApiVersion: String = "20200320"
+    
+    /// limit of loadedItems
+    static let limitOfItemsToLoad: Int = 5
 }
